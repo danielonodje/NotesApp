@@ -77,11 +77,16 @@ class NotesApp {
     search(searchtext){
         //change to string if not already a string
         searchtext += "";
-        rnotes = ["Showing results for search '[<"+searchtext+">]'"];
+        let rnotes = ["Showing results for search ["+searchtext+"]"];
         for(let i=0;i<this.notes.length;i++) {
-            if(notes.i.indexOf(searchtext))
-            rnotes.push(formatNote(i,this.notes.i,this.author));
+            if(this.notes[i].indexOf(searchtext)){
+            	rnotes.push(this.formatNote(i,this.notes[i],this.author));	
+            }
         }
-    } 
+        if(rnotes.length === 1){
+        	rnotes.push("no results found");
+        }
+        return rnotes;
+    }  
 
 }
