@@ -63,11 +63,11 @@ class NotesApp {
         if(!isNaN(note_id) && this.notes.note_id !== undefined)
         this.notes.splice(note_id,1);
     }
+    
     /*
     * search for notes containing a particular string
     *param : searchtext
     */
-
     search(searchtext){
         //change to string if not already a string
         searchtext += "";
