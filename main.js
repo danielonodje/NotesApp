@@ -18,9 +18,7 @@ class NotesApp {
     *  param : none
     */
     listNotes(){    
-        return this.notes.map(function(current){
-            return { "NOTE ID : " : note_id,"NOTE CONTENT" : note_content };
-        })
+        for(var i=0;i<)
     }
 
     /*
@@ -28,6 +26,7 @@ class NotesApp {
     * param : note_id
     */
     get(note_id){
+        if(isNaN(note_id))
         return notes.note_id;
     }
 
@@ -36,6 +35,7 @@ class NotesApp {
     * param : note_id
     */
     delete_(note_id){
+        if(isNaN(note_id))
         this.notes.splice(note_id,i);
     }
 }
