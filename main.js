@@ -23,8 +23,8 @@ class NotesApp {
     *param : note_id,note_content
     */
     edit(note_id,note_content) {
-        if(!isNaN(note_id) && this.notes.note_id !== undefined)
-        this.notes.id = note_content;
+        if(!isNaN(note_id) && this.notes[note_id] !== undefined)
+        this.notes[note_id] = note_content;
     }
 
     /*
