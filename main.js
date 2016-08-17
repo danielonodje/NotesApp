@@ -15,7 +15,7 @@ class NotesApp {
 
     /*
     *edit a note
-    (param : note_id,note_content
+    *param : note_id,note_content
     */
     create(note_id,note_content){
         if(!isNaN(note_id) && this.notes.note_id !== undefined)
@@ -49,7 +49,7 @@ class NotesApp {
     */
     delete_(note_id){
         if(!isNaN(note_id))
-        this.notes.splice(note_id,i);
+        this.notes.splice(note_id,1);
     }
 
 
