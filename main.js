@@ -1,9 +1,8 @@
 
 class NotesApp {
-    const author;
-    const notes = [];
     constructor(author) {
         this.author = author;
+        const notes = [];
     }
 
     /*
