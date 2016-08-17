@@ -1,5 +1,9 @@
 
 class NotesApp {
+    /*
+    * creates an instance of NotesApp, optionally sets the author
+    * param : author
+    */
     constructor(author) {
         this.author = author;
         this.notes = [];
