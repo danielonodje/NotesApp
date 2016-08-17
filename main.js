@@ -93,6 +93,7 @@ class NotesApp {
         }
         return rnotes;
     }
+    
     /*
     * check the passed id if it is valid and exists in the notes array
     * @param {Integer} note_id
