@@ -2,8 +2,9 @@
 class NotesApp {
     constructor(author) {
         this.author = author;
-        const notes = [];
+        this.notes = [];
     }
+
 
     /*
     *create a new note
