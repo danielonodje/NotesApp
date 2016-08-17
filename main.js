@@ -1,9 +1,14 @@
 
 class NotesApp {
+    /*
+    * creates an instance of NotesApp, optionally sets the author
+    * param : author
+    */
     constructor(author) {
         this.author = author;
-        const notes = [];
+        this.notes = [];
     }
+
 
     /*
     *create a new note
