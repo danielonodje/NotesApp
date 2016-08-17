@@ -44,10 +44,12 @@ class NotesApp {
     * params : note id, note_content, author(optional)
     */
     formatNote(note_id,note_content, author) {
-        if(author !== undefined){
-            return "NOTE ID: "+i+"\n"+this.notes.i+"\n\nBy Author"+author;
+    	if(this.notes[note_id] !== undefined){
+    		if(author !== undefined){
+            return "NOTE ID: "+note_id+"    "+this.notes[note_id]+"   By Author"+author;
         }
-        return "NOTE ID: "+i+"\n"+this.notes.i;
+        return "NOTE ID: "+note_id+"    "+this.notes[note_id];	
+    	}
     }
 
     /*
