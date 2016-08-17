@@ -29,7 +29,7 @@ class NotesApp {
     listNotes(){
         rnotes = [];    
         for(let i=0;i<this.notes.length;i++){
-            rnotes.push("NOTE ID: "+i+"\n"+this.notes.i.note_content);
+            rnotes.push("NOTE ID: "+i+"\n"+this.notes.i);
         }
         return rnotes;
     }
