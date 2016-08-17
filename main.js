@@ -14,6 +14,15 @@ class NotesApp {
     }
 
     /*
+    *edit a note
+    (param : note_id,note_content
+    */
+    create(note_id,note_content){
+        if(!isNaN(note_id) && this.notes.note_id !== undefined)
+        this.notes.id = note_content;
+    }
+
+    /*
     *  lists all notes
     *  param : none
     */
@@ -42,4 +51,6 @@ class NotesApp {
         if(!isNaN(note_id))
         this.notes.splice(note_id,i);
     }
+
+
 }
