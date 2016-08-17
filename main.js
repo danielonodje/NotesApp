@@ -17,8 +17,12 @@ class NotesApp {
     *  lists all notes
     *  param : none
     */
-    listNotes(){    
-        for(var i=0;i<)
+    listNotes(){
+        rnotes = [];    
+        for(let i=0;i<this.notes.length;i++){
+            rnotes.push("NOTE ID: "+i+"\n"+this.notes.i.note_content);
+        }
+        return rnotes;
     }
 
     /*
