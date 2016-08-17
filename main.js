@@ -27,11 +27,11 @@ class NotesApp {
     *  param : none
     */
     listNotes() {
-        rnotes = [];    
+        let rnotes = [];    
         for(let i=0;i<this.notes.length;i++) {
-            rnotes.push(formatNote(i,this.notes.i));
+            rnotes.push(this.formatNote(i,this.notes[i]));
         }
-        return rnotes;
+        console.log(rnotes);
     }
 
     /*
