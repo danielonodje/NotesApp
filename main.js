@@ -26,7 +26,7 @@ class NotesApp {
     * param : note_id
     */
     get(note_id){
-        if(isNaN(note_id))
+        if(!isNaN(note_id))
         return notes.note_id;
     }
 
@@ -35,7 +35,7 @@ class NotesApp {
     * param : note_id
     */
     delete_(note_id){
-        if(isNaN(note_id))
+        if(!isNaN(note_id))
         this.notes.splice(note_id,i);
     }
 }
