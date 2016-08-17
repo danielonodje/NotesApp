@@ -23,7 +23,7 @@ class NotesApp {
     * @param {string} note_content
     */
     edit(note_id,note_content) {
-        if(!isNaN(note_id) && this.notes[note_id] !== undefined)
+        if(isValidId(note_id))
         this.notes[note_id] = note_content;
     }
 
@@ -61,7 +61,7 @@ class NotesApp {
     * @return {String} [a single note]
     */
     get(note_id) {
-        if(!isNaN(note_id) && this.notes[note_id] !== undefined)
+        if(isValidId(note_id))
         return notes.note_id;
     }
 
@@ -70,7 +70,7 @@ class NotesApp {
     * @param {Integer} note_id
     */
     delete(note_id) {
-        if(!isNaN(note_id) && this.notes[note_id] !== undefined)
+        if(isValidId(note_id))
         this.notes.splice(note_id,1);
     }
     
@@ -93,6 +93,17 @@ class NotesApp {
         	rnotes.push("no results found");
         }
         return rnotes;
-    }  
+    }
+    /*
+    * check the passed id if it is valid and exists in the notes array
+    * @param {Integer} note_id
+    * @return {Boolean} result of several checks on id
+    */
+    isValidId(note_id){
+        if(!isNaN(note_id) && note_id >= 0 && note_id < this.notes.length && this.notes[note_id] !== undefined){
+            return true;
+        }
+        return false;
+    } 
 
 }
