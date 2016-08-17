@@ -1,8 +1,8 @@
-
 class NotesApp {
     /*
-    * creates an instance of NotesApp, optionally sets the author
-    * param : author
+    * Creates an instance of NotesApp, optionally sets the author
+    * @param : author
+    * @return : null
     */
     constructor(author) {
         this.author = author;
@@ -11,16 +11,18 @@ class NotesApp {
 
 
     /*
-    *create a new note
-    (param : note content
+    *Create a new note
+    * @param : note_content
+    * @return : null
     */
     create(note_content) {
         this.notes.push(note_content);
     }
 
     /*
-    *edit a note
-    *param : note_id,note_content
+    * Edit a note
+    * @param : note_id,note_content
+    * @return : null
     */
     edit(note_id,note_content) {
         if(!isNaN(note_id) && this.notes[note_id] !== undefined)
@@ -28,20 +30,22 @@ class NotesApp {
     }
 
     /*
-    *  lists all notes
-    *  param : none
+    *  Lists all notes
+    *  @param : null
+    *  @return : rnotes [an array of strings, each represents one of the available notes]
     */
     listNotes() {
         let rnotes = [];    
         for(let i=0;i<this.notes.length;i++) {
             rnotes.push(this.formatNote(i,this.notes[i]));
         }
-        console.log(rnotes);
+        return(rnotes);
     }
 
     /*
-    * formats a note for display
-    * params : note id, note_content, author(optional)
+    * Formats a note for display
+    * @params : note id, note_content, author(optional)
+    * @return : a display ready string representing a single note
     */
     formatNote(note_id,note_content, author) {
     	if(this.notes[note_id] !== undefined){
@@ -53,8 +57,9 @@ class NotesApp {
     }
 
     /*
-    * gets a particular note
-    * param : note_id
+    * Gets a particular note
+    * @param : note_id
+    * @return : a single note
     */
     get(note_id) {
         if(!isNaN(note_id) && this.notes[note_id] !== undefined)
@@ -62,8 +67,9 @@ class NotesApp {
     }
 
     /*
-    * deletes a particular note
-    * param : note_id
+    * Deletes a particular note
+    * @param : note_id
+    * @return : null
     */
     delete(note_id) {
         if(!isNaN(note_id) && this.notes[note_id] !== undefined)
@@ -71,8 +77,9 @@ class NotesApp {
     }
     
     /*
-    * search for notes containing a particular string
-    *param : searchtext
+    * Search for notes containing a particular string
+    * @param : searchtext
+    * @return : rnotes [an array of strings, each represents a single note]
     */
     search(searchtext){
         //change to string if not already a string
