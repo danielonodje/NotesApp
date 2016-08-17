@@ -79,6 +79,7 @@ class NotesApp {
     * @param {String} searchtext
     * @return {Array} rnotes [an array of strings, each represents a single note]
     */
+    
     search(searchtext){
         //change to string if not already a string
         searchtext += "";
