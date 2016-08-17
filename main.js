@@ -61,7 +61,7 @@ class NotesApp {
     * param : note_id
     */
     delete(note_id) {
-        if(!isNaN(note_id) && this.notes.note_id !== undefined)
+        if(!isNaN(note_id) && this.notes[note_id] !== undefined)
         this.notes.splice(note_id,1);
     }
     
