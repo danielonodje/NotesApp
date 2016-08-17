@@ -1,18 +1,16 @@
 
 class NotesApp {
-    author;
+    const author;
     const notes = [];
-    lastId;
-    constructor(){
-        lastId = -1;
+    constructor(author){
+        this.author = author;
     }
     /*
     *create a new note
     (param : note content
     */
     create(note_content){
-        this.lastId++;
-        this.notes.push({lastId : note_content});
+        this.notes.push(note_content);
     }
 
     /*
@@ -38,13 +36,6 @@ class NotesApp {
     * param : note_id
     */
     delete_(note_id){
-        this.notes.
+        this.notes.splice(note_id,i);
     }
 }
-
-// Array Remove - By John Resig (MIT Licensed)
-Array.prototype.remove = function(from, to) {
-  var rest = this.slice((to || from) + 1 || this.length);
-  this.length = from < 0 ? this.length + from : from;
-  return this.push.apply(this, rest);
-};
