@@ -2,14 +2,15 @@
 class NotesApp {
     const author;
     const notes = [];
-    constructor(author){
+    constructor(author) {
         this.author = author;
     }
+
     /*
     *create a new note
     (param : note content
     */
-    create(note_content){
+    create(note_content) {
         this.notes.push(note_content);
     }
 
@@ -17,7 +18,7 @@ class NotesApp {
     *edit a note
     *param : note_id,note_content
     */
-    create(note_id,note_content){
+    create(note_id,note_content) {
         if(!isNaN(note_id) && this.notes.note_id !== undefined)
         this.notes.id = note_content;
     }
@@ -26,19 +27,30 @@ class NotesApp {
     *  lists all notes
     *  param : none
     */
-    listNotes(){
+    listNotes() {
         rnotes = [];    
-        for(let i=0;i<this.notes.length;i++){
-            rnotes.push("NOTE ID: "+i+"\n"+this.notes.i);
+        for(let i=0;i<this.notes.length;i++) {
+            rnotes.push(formatNote(i,this.notes.i));
         }
         return rnotes;
+    }
+
+    /*
+    * formats a note for display
+    * params : note id, note_content, author(optional)
+    */
+    formatNote(note_id,note_content, author) {
+        if(author !== undefined){
+            return "NOTE ID: "+i+"\n"+this.notes.i+"\n\nBy Author"+author;
+        }
+        return "NOTE ID: "+i+"\n"+this.notes.i;
     }
 
     /*
     * gets a particular note
     * param : note_id
     */
-    get(note_id){
+    get(note_id) {
         if(!isNaN(note_id) && this.notes.note_id !== undefined)
         return notes.note_id;
     }
@@ -47,10 +59,23 @@ class NotesApp {
     * deletes a particular note
     * param : note_id
     */
-    delete_(note_id){
+    delete(note_id) {
         if(!isNaN(note_id) && this.notes.note_id !== undefined)
         this.notes.splice(note_id,1);
     }
+    /*
+    * search for notes containing a particular string
+    *param : searchtext
+    */
 
+    search(searchtext){
+        //change to string if not already a string
+        searchtext += "";
+        rnotes = ["Showing results for search '[<"+searchtext+">]'"];
+        for(let i=0;i<this.notes.length;i++) {
+            if(notes.i.indexOf(searchtext))
+            rnotes.push(formatNote(i,this.notes.i,this.author));
+        }
+    } 
 
 }
