@@ -57,7 +57,7 @@ class NotesApp {
     * param : note_id
     */
     get(note_id) {
-        if(!isNaN(note_id) && this.notes.note_id !== undefined)
+        if(!isNaN(note_id) && this.notes[note_id] !== undefined)
         return notes.note_id;
     }
 
